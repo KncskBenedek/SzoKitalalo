@@ -29,27 +29,21 @@ Ha kitalálta ???.
 */
 
 public class SzoKitalalo {
-<<<<<<< HEAD
+
     static String rndSzo = "";
     static String beSzo = "";
-    static char[] 
-    public static void main(String[] args) {
-        torzs();
-=======
+  //  static char[] 
 
     public static void main(String[] args) throws UnsupportedEncodingException {
         //torzs();
-<<<<<<< HEAD
+
  //       beker();
         randomSzo();
-=======
         beker();
->>>>>>> 115f05197d48f74f403136570474b094ee2cd3df
->>>>>>> ba67238f587ec4248dc53d92ef98ba28a15fe820
     }
     private static void torzs(){
         randomSzo();
-        karakterEllenorzes();
+//        karakterEllenorzes();
     }
     private static void karakterEllenorzes(tomb){
         int i  = 0;
@@ -75,10 +69,10 @@ public class SzoKitalalo {
         }
     }
 
-    private static benneVanE(char betu){
-        
-        
-    }
+//    private static benneVanE(char betu){
+//        
+//        
+//    }
 
     private static String beker() throws UnsupportedEncodingException {
         Scanner sc = new Scanner(System.in);
