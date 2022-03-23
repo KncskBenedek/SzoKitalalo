@@ -1,4 +1,13 @@
 package szokitalalo;
+
+
+import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
+import java.util.Random;
+import java.util.Scanner;
+
+
+
 /*
 leírás saját szavainkal: A program kiválaszt egy kétbetűs szót több szó közül
 (pl.: íz, őz fű), ezután a felhasználótol bekérünk egy maximum 2 karakter hosszú 
@@ -23,6 +32,7 @@ public class SzoKitalalo {
     
     static String beSzo = "az";
 
+<<<<<<< HEAD
     public static void main(String[] args) {
         torzs();
         
@@ -75,4 +85,75 @@ public class SzoKitalalo {
     }
     
     
+=======
+    static String rndSzo = "";
+    static String beSzo = "";
+  //  static char[] 
+
+    public static void main(String[] args) throws UnsupportedEncodingException {
+        //torzs();
+
+ //       beker();
+        randomSzo();
+        beker();
+    }
+    private static void torzs(){
+        randomSzo();
+//        karakterEllenorzes();
+    }
+    private static void karakterEllenorzes(tomb){
+        int i  = 0;
+        //int dbNemJo = 0;
+        int hossz = tomb.lenght;
+        while (i<hossz) {
+            
+            boolean benneVan = benneVanE(tomb[i]);
+            
+            //if(benneVan){
+                //boolean joHelyenVan = jóhelyenvan
+                //kiir()
+                //String szoveg = joHelyenVan?"":"";
+                //kiir(szoveg);            
+            //}else{
+                //dbNemJo++;
+            //}
+            
+              //boolean ar =   joHelyenVanE();  
+            //i++;
+            
+            //System.out.printf(ar?"":"");
+        }
+    }
+
+//    private static benneVanE(char betu){
+//        
+//        
+//    }
+
+    private static String beker() throws UnsupportedEncodingException {
+        Scanner sc = new Scanner(System.in);
+        String szo = "";
+        do {
+            System.out.println("Kérem adjon meg egy szót: ");
+            Scanner scan = new Scanner(new InputStreamReader(System.in, "ISO-8859-1"));
+            szo=scan.nextLine();
+        } while (!(szo.matches("[a-záéíóöőúüű]{2}")));
+        return szo;
+        // ellenorizni a random szot
+      
+        
+    } 
+
+    private static void randomSzo() {
+        Random rnd = new Random();
+        int rndszam = rnd.nextInt(3);
+        String[] szavak = {"ás", "íz", "ős"};
+        String randomSzo = szavak[rndszam];
+        System.out.println(randomSzo);
+        
+    }
+    
+    
+    
+>>>>>>> 07dd1b7c2c71be4120f570c55e72f69f8ad360c6
 }
