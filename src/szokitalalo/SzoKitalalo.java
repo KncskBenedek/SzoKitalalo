@@ -3,6 +3,7 @@ package szokitalalo;
 
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
+import java.util.Random;
 import java.util.Scanner;
 
 
@@ -31,7 +32,8 @@ public class SzoKitalalo {
 
     public static void main(String[] args) throws UnsupportedEncodingException {
         //torzs();
-        beker();
+ //       beker();
+        randomSzo();
     }
     private static void torzs(){
     
@@ -40,7 +42,6 @@ public class SzoKitalalo {
     private static String beker() throws UnsupportedEncodingException {
         Scanner sc = new Scanner(System.in);
         String szo = "";
-        // /^[A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű]{1,2}$/         /^[a-zA-Z]+$/g
         do {
             System.out.println("Kérem adjon meg egy szót: ");
             Scanner scan = new Scanner(new InputStreamReader(System.in, "ISO-8859-1"));
@@ -51,6 +52,15 @@ public class SzoKitalalo {
       
         
     } 
+
+    private static void randomSzo() {
+        Random rnd = new Random();
+        int rndszam = rnd.nextInt(3);
+        String[] szavak = {"ás", "íz", "ős"};
+        String randomSzo = szavak[rndszam];
+        System.out.println(randomSzo);
+        
+    }
     
     
     
