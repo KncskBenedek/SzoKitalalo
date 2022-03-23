@@ -26,7 +26,7 @@ Ha kitalálta ???.
  */
 public class SzoKitalalo {
 
-    static String rndSzo = "űs";
+    static String rndSzo = "qs";
     static String beSzo = "";
 
     public static void main(String[] args) throws UnsupportedEncodingException {
@@ -89,7 +89,7 @@ public class SzoKitalalo {
 
     //  static char[] 
     private static String beker() throws UnsupportedEncodingException {
-        Scanner scan = new Scanner(new InputStreamReader(System.in, "ISO-8859-1"));
+        Scanner scan = new Scanner(new InputStreamReader(System.in, "ISO-8859-2"));
         //Scanner sc = new Scanner(System.in);
         String szo = "";
         do {
