@@ -29,14 +29,55 @@ Ha kitalálta ???.
 */
 
 public class SzoKitalalo {
+<<<<<<< HEAD
+    static String rndSzo = "";
+    static String beSzo = "";
+    static char[] 
+    public static void main(String[] args) {
+        torzs();
+=======
 
     public static void main(String[] args) throws UnsupportedEncodingException {
         //torzs();
+<<<<<<< HEAD
  //       beker();
         randomSzo();
+=======
+        beker();
+>>>>>>> 115f05197d48f74f403136570474b094ee2cd3df
+>>>>>>> ba67238f587ec4248dc53d92ef98ba28a15fe820
     }
     private static void torzs(){
-    
+        randomSzo();
+        karakterEllenorzes();
+    }
+    private static void karakterEllenorzes(tomb){
+        int i  = 0;
+        //int dbNemJo = 0;
+        int hossz = tomb.lenght;
+        while (i<hossz) {
+            
+            boolean benneVan = benneVanE(tomb[i]);
+            
+            //if(benneVan){
+                //boolean joHelyenVan = jóhelyenvan
+                //kiir()
+                //String szoveg = joHelyenVan?"":"";
+                //kiir(szoveg);            
+            //}else{
+                //dbNemJo++;
+            //}
+            
+              //boolean ar =   joHelyenVanE();  
+            //i++;
+            
+            //System.out.printf(ar?"":"");
+        }
+    }
+
+    private static benneVanE(char betu){
+        
+        
     }
 
     private static String beker() throws UnsupportedEncodingException {
