@@ -26,7 +26,7 @@ Ha kitalálta ???.
  */
 public class SzoKitalalo {
 
-    static String rndSzo = "qs";
+    static String rndSzo = "";
     static String beSzo = "";
 
     public static void main(String[] args) throws UnsupportedEncodingException {
