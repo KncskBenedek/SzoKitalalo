@@ -20,11 +20,59 @@ Ha kitalálta ???.
 */
 
 public class SzoKitalalo {
+    
+    static String beSzo = "az";
 
     public static void main(String[] args) {
         torzs();
+        
     }
     private static void torzs(){
-    
+        melyikJoKiir(false,1);
     }
+//    private static boolean joHelyenVanE (char karakter, int melyik){
+//        //String szo = randomSzó();
+//        
+////        if (karakter == rndSzo.charAt(melyik)){
+////            return true;
+////        }else{
+////            return false;
+////        }
+//        
+//    }
+
+    private static void kiiras(String szoveg) {
+        System.out.println(szoveg);
+    }
+    private static void kiirasf(String szoveg,String szo) {
+        System.out.printf(szoveg, szo);
+    }
+
+    private static void nemTalalteEl(int dbNemjo) {
+        if (dbNemjo == 2){
+            System.out.println("Nem találta el szót és egyik se karakter jó!");
+        }
+    }
+
+    private static void melyikJoKiir(boolean joHely, int melyik) {
+        if(joHely){
+            kiirasf("Az %s karakter jó helyen van\n", beSzo );
+            if (melyik == 0){  
+                kiiras("   ^");
+            }else{ 
+                //kiirasf("Az %s karakter jó helyen van", beSzo);
+                kiiras("    ^");
+            }
+        }else{
+           kiirasf("Az %s karakter rossz helyen van\n", beSzo );
+            if (melyik == 0){  
+                kiiras("   ^"); 
+            }else{ 
+                //kiirasf("Az %s karakter jó helyen van", beSzo);
+                kiiras("    ^"); 
+            }
+        }        
+    }
+    
+    
 }
