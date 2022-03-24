@@ -20,9 +20,6 @@ Ha kitalálta ???.
 |->benneVanE();  joHelyenVanE();
 *kiiras();
 *torzs();
-
-
-
  */
 public class SzoKitalalo {
 
@@ -35,8 +32,7 @@ public class SzoKitalalo {
     }
 
     private static void torzs() throws UnsupportedEncodingException {
-
-        //rndSzo = randomSzo();
+        rndSzo = randomSzo();
         boolean megVan = false;
         do {
             beSzo = beker();
@@ -45,7 +41,7 @@ public class SzoKitalalo {
                 karakterEllenorzes();
             }
 
-        } while (!megVan); //karakterEllenorzes();
+        } while (!megVan);
     }
 
     private static boolean joHelyenVanE(char karakter, int melyik) {
@@ -61,7 +57,7 @@ public class SzoKitalalo {
         System.out.println(szoveg);
     }
 
-    private static void kiirasf(String szoveg, String szo) throws UnsupportedEncodingException{
+    private static void kiirasf(String szoveg, String szo) throws UnsupportedEncodingException {
         System.out.printf(szoveg, szo);
     }
 
@@ -69,49 +65,37 @@ public class SzoKitalalo {
         System.out.println("Nem találta el szót és egyik se karakter jó!");
     }
 
-    private static void melyikJoKiir(boolean joHely, int melyik) throws UnsupportedEncodingException{
+    private static void melyikJoKiir(boolean joHely, int melyik) throws UnsupportedEncodingException {
         if (joHely) {
             kiirasf("Az %s karakter jó helyen van\n", beSzo);
-            if (melyik == 0) {
-                kiiras("   ^");
-            } else {
-                kiiras("    ^");
-            }
+            nyilEldontes(melyik);
         } else {
             kiirasf("Az %s karakter rossz helyen van\n", beSzo);
-            if (melyik == 0) {
-                kiiras("   ^");
-            } else {
-                kiiras("    ^");
-            }
+            nyilEldontes(melyik);
         }
     }
 
-    //  static char[] 
     private static String beker() throws UnsupportedEncodingException {
         Scanner scan = new Scanner(new InputStreamReader(System.in, "ISO-8859-2"));
-        //Scanner sc = new Scanner(System.in);
         String szo = "";
         do {
             System.out.println("Kérem adjon meg egy szót: ");
-            //scan = new Scanner(new InputStreamReader(System.in, "ISO-8859-1"));
             szo = scan.nextLine();
         } while (!(szo.matches("[a-záéíóöőúüű]{2}")));
         return szo;
-        // ellenorizni a random szot
 
     }
 
     private static String randomSzo() throws UnsupportedEncodingException {
         Random rnd = new Random();
-        int rndszam = rnd.nextInt(3);
         String[] szavak = {"ás", "íz", "ős"};
+        int rndszam = rnd.nextInt(szavak.length);
         String randomSzo = szavak[rndszam];
         return randomSzo;
 
     }
 
-    private static void karakterEllenorzes() throws UnsupportedEncodingException{
+    private static void karakterEllenorzes() throws UnsupportedEncodingException {
         int n = 0;
         int dbNemJo = 0;
         int hossz = rndSzo.length();
@@ -133,7 +117,7 @@ public class SzoKitalalo {
 
     }
 
-    private static boolean benneVanE(char betu) throws UnsupportedEncodingException{
+    private static boolean benneVanE(char betu) throws UnsupportedEncodingException {
         int i = 0;
         int hossz = rndSzo.length();
         while (i < hossz && !(betu == rndSzo.charAt(i))) {
@@ -143,8 +127,15 @@ public class SzoKitalalo {
         return benneVan;
     }
 
-    private static boolean egyezik() throws UnsupportedEncodingException{
+    private static boolean egyezik() throws UnsupportedEncodingException {
         return beSzo.equals(rndSzo);
+    }
+    private static void nyilEldontes(int melyik){
+        if (melyik == 0) {
+                kiiras("   ^");
+            } else {
+                kiiras("    ^");
+            }
     }
 
 }
