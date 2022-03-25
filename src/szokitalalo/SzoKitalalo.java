@@ -43,7 +43,7 @@ public class SzoKitalalo {
             }
 
         } while (!megVan);
-        kiiras("Gratulálok eltaláltad a szót!");
+        kiiras("Gratulálok eltalálta a szót!");
     }
 
     private static boolean joHelyenVanE(char karakter, int melyik) {
@@ -80,10 +80,13 @@ public class SzoKitalalo {
     private static void beker() throws UnsupportedEncodingException {
         Scanner scan = new Scanner(new InputStreamReader(System.in, "ISO-8859-2"));
         String szo = "";
-        do {
-            System.out.println("Kérem adjon meg egy szót: ");
+        kiiras("Kérem adjon meg egy szót: ");
+        szo = scan.nextLine();
+        while (!(szo.matches("[a-záéíóöőúüű]{2}"))) {
+            kiiras("Csak két BETŰS szavakat fogadunk el! Próbálja újra.");
+            kiiras("Kérem adjon meg egy szót: ");
             szo = scan.nextLine();
-        } while (!(szo.matches("[a-záéíóöőúüű]{2}")));
+        }
         beSzo = szo;
 
     }
@@ -132,12 +135,13 @@ public class SzoKitalalo {
     private static boolean egyezik() throws UnsupportedEncodingException {
         return beSzo.equals(rndSzo);
     }
-    private static void nyilEldontes(int melyik){
+
+    private static void nyilEldontes(int melyik) {
         if (melyik == 0) {
-                kiiras("   ^");
-            } else {
-                kiiras("    ^");
-            }
+            kiiras("   ^");
+        } else {
+            kiiras("    ^");
+        }
     }
 
 }
