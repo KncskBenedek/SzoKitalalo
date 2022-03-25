@@ -83,10 +83,13 @@ public class SzoKitalalo {
     private static void beker() throws UnsupportedEncodingException {
         Scanner scan = new Scanner(new InputStreamReader(System.in, "ISO-8859-2"));
         String szo = "";
-        do {
-            System.out.println("Kérem adjon meg egy szót: ");
+        kiiras("Kérem adjon meg egy szót: ");
+        szo = scan.nextLine();
+        while (!(szo.matches("[a-záéíóöőúüű]{2}"))) {
+            kiiras("Csak két BETŰS szavakat fogadunk el! Próbálja újra.");
+            kiiras("Kérem adjon meg egy szót: ");
             szo = scan.nextLine();
-        } while (!(szo.matches("[a-záéíóöőúüű]{2}")));
+        }
         beSzo = szo;
 
     }
