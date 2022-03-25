@@ -32,16 +32,18 @@ public class SzoKitalalo {
     }
 
     private static void torzs() throws UnsupportedEncodingException {
-        rndSzo = randomSzo();
+        randomSzo();
         boolean megVan = false;
+        kiiras("Ki kell találnia egy 2 betüs szót! (pl: út le stb...)\nSok sikert!");
         do {
-            beSzo = beker();
+            beker();
             megVan = egyezik();
             if (!megVan) {
                 karakterEllenorzes();
             }
 
         } while (!megVan);
+        kiiras("Gratulálok eltaláltad a szót!");
     }
 
     private static boolean joHelyenVanE(char karakter, int melyik) {
@@ -75,23 +77,23 @@ public class SzoKitalalo {
         }
     }
 
-    private static String beker() throws UnsupportedEncodingException {
+    private static void beker() throws UnsupportedEncodingException {
         Scanner scan = new Scanner(new InputStreamReader(System.in, "ISO-8859-2"));
         String szo = "";
         do {
             System.out.println("Kérem adjon meg egy szót: ");
             szo = scan.nextLine();
         } while (!(szo.matches("[a-záéíóöőúüű]{2}")));
-        return szo;
+        beSzo = szo;
 
     }
 
-    private static String randomSzo() throws UnsupportedEncodingException {
+    private static void randomSzo() throws UnsupportedEncodingException {
         Random rnd = new Random();
         String[] szavak = {"ás", "íz", "ős"};
         int rndszam = rnd.nextInt(szavak.length);
         String randomSzo = szavak[rndszam];
-        return randomSzo;
+        rndSzo = randomSzo;
 
     }
 
