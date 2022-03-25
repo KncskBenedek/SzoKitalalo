@@ -32,18 +32,21 @@ public class SzoKitalalo {
     }
 
     private static void torzs() throws UnsupportedEncodingException {
-        randomSzo();
-        boolean megVan = false;
-        kiiras("Ki kell találnia egy 2 betüs szót! (pl: út le stb...)\nSok sikert!");
         do {
-            beker();
-            megVan = egyezik();
-            if (!megVan) {
-                karakterEllenorzes();
-            }
+            randomSzo();
+            boolean megVan = false;
+            kiiras("Ki kell találnia egy 2 betüs szót! (pl: út le stb...)\nSok sikert!");
+            do {
+                beker();
+                megVan = egyezik();
+                if (!megVan) {
+                    karakterEllenorzes();
+                }
 
-        } while (!megVan);
-        kiiras("Gratulálok eltaláltad a szót!");
+            } while (!megVan);
+            kiiras("Gratulálok eltaláltad a szót!");
+        } while (ujra());
+
     }
 
     private static boolean joHelyenVanE(char karakter, int melyik) {
@@ -132,12 +135,28 @@ public class SzoKitalalo {
     private static boolean egyezik() throws UnsupportedEncodingException {
         return beSzo.equals(rndSzo);
     }
-    private static void nyilEldontes(int melyik){
+
+    private static void nyilEldontes(int melyik) {
         if (melyik == 0) {
-                kiiras("   ^");
-            } else {
-                kiiras("    ^");
-            }
+            kiiras("   ^");
+        } else {
+            kiiras("    ^");
+        }
+    }
+
+    private static boolean ujra() throws UnsupportedEncodingException {
+        Scanner scan = new Scanner(System.in);
+        kiiras("Szeretne Újra játszani?(igen/nem)");
+        String valasz = scan.nextLine();
+        while (!(!(valasz == "nem" || valasz == "igen"))) {
+            kiiras("Szeretne Újra játszani?(igen/nem)");
+            valasz = scan.nextLine();
+        }
+        if (valasz.equals("igen")) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
 }
